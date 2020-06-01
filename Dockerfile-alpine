@@ -1,2 +1,4 @@
 FROM jenkins/jenkins:alpine
-RUN apk update && apk add --no-cache docker-cli
+USER root
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories && \
+    apk update && apk add --no-cache docker-cli

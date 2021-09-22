@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if [ -z "$1" ]; then
+if [ $# -eq 0 ]; then
+    echo "No extra command found"
+else    
     echo "Running $@"
     $@
-else
-    echo "No extra command found"
 fi
 
 exec /sbin/tini -- /usr/local/bin/jenkins.sh

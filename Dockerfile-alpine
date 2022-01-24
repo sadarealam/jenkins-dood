@@ -1,6 +1,6 @@
 FROM jenkins/jenkins:alpine
 USER root
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.14/community' >> /etc/apk/repositories && \
-    apk update && apk add --no-cache docker-cli
+    apk update && apk add --no-cache docker-cli && apk add --no-cache zip
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
